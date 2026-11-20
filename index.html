@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DidaWorks</title>
+<!-- INTERIM HOME PAGE: built only from the DidaWorks GitHub profile text. Pending the Oracle review of the DidaWorks / DidaCommons identity; replace freely. -->
+<style>
+  /* ---- DidaWorks site layer (shared) ---- */
+  @font-face{font-family:"Roboto";src:url("/assets/fonts/Roboto-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+  @font-face{font-family:"Roboto";src:url("/assets/fonts/Roboto-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+  @font-face{font-family:"Roboto Slab";src:url("/assets/fonts/RobotoSlab-SemiBold.ttf") format("truetype");font-weight:600;font-display:swap}
+  :root{--blue:#1F2B3D;--blue-2:#3A6EA5;--tint:#E9F1F8;--gold:#E0997A;--ink:#22272E;--muted:#585D66;--line:#DED6C7;--bg:#FAF6EE;
+        --c1:#1F2B3D;--c2:#3A6EA5;--c3:#9CCDEE;--c4:#E0997A;--c5:#6F84A3;--c6:#2D8A7A;--c7:#A8553A}
+  body{font-family:"Roboto",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+  header h1,h2{font-family:"Roboto Slab","Roboto",Georgia,serif;font-weight:600}
+  .skip{position:absolute;left:-9999px;top:0;background:#fff;color:#1F2B3D;padding:8px 12px;z-index:10;font-weight:700}
+  .skip:focus{left:8px;top:8px}
+  .sitebar{background:#16202E;color:#EFE6D3;display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:8px 24px;font-size:.88rem}
+  .sitebar a{color:#EFE6D3;text-decoration:none}
+  .sitebar a:hover,.sitebar a:focus-visible{text-decoration:underline}
+  .sitebar .brand{font-family:"Roboto Slab","Roboto",serif;font-weight:600;color:#E0997A;font-size:1rem}
+  .sitebar .sep{color:#6F84A3}
+  .sitebar .tools{display:flex;flex-wrap:wrap;gap:4px 14px;margin-left:auto}
+  .sitebar .tools a[aria-current=page]{color:#9CCDEE;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+  .sitebar a:focus-visible{outline:2px solid #9CCDEE;outline-offset:2px}
+  .proto{background:var(--gold)!important;color:#1F2B3D!important}
+  header{border-bottom-color:var(--gold)!important}
+  .sitefoot{max-width:1180px;margin:0 auto 32px;padding:14px 18px 0;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted)}
+  .sitefoot a{color:#2F5D8A}
+
+  *{box-sizing:border-box}
+  body{margin:0;color:var(--ink);background:var(--bg);line-height:1.55}
+  header{background:var(--blue);color:#fff;padding:26px 24px 22px;border-bottom:5px solid var(--gold)}
+  header .in,main,.sitefoot{max-width:1080px;margin-left:auto;margin-right:auto}
+  header h1{margin:0 0 6px;font-size:1.9rem}
+  header p{margin:0;color:#dfe8f3;max-width:72ch;font-size:1.05rem}
+  .proto{display:inline-block;font-weight:700;font-size:.75rem;padding:2px 8px;border-radius:3px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
+  main{padding:26px 18px 10px}
+  h2{color:var(--blue);font-size:1.3rem;margin:26px 0 8px}
+  a{color:#2F5D8A}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column}
+  .card h3{margin:0 0 6px;font-family:"Roboto Slab","Roboto",serif;font-weight:600;font-size:1.12rem}
+  .card h3 a{color:var(--blue);text-decoration:none}
+  .card h3 a:hover,.card h3 a:focus-visible{text-decoration:underline}
+  .card h3 a::after{content:"";position:absolute;inset:0}
+  .card{position:relative}
+  .card p{margin:0 0 10px;color:var(--ink);font-size:.95rem}
+  .card ul{margin:0 0 10px;padding-left:18px;font-size:.88rem;color:var(--muted)}
+  .card .tag{margin-top:auto;font-size:.78rem;color:var(--muted)}
+  .card:hover{border-color:var(--blue-2);box-shadow:0 2px 10px rgba(31,43,61,.08)}
+  .card:focus-within{outline:3px solid var(--blue-2);outline-offset:2px}
+  .note{background:var(--tint);border-left:4px solid var(--blue);padding:10px 14px;border-radius:0 6px 6px 0;font-size:.92rem;margin:18px 0}
+  ul.principles{columns:2;padding-left:18px} @media (max-width:640px){ul.principles{columns:1}}
+  table{width:100%;border-collapse:collapse;font-size:.92rem;background:#fff;border:1px solid var(--line)}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #ece6da;vertical-align:top}
+  thead th{background:var(--tint);color:var(--blue);font-size:.8rem;text-transform:uppercase;letter-spacing:.3px}
+  :focus-visible{outline:3px solid var(--blue-2);outline-offset:2px}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<nav class="sitebar" aria-label="DidaWorks"><a class="brand" href="/">DidaWorks</a><span class="sep" aria-hidden="true">/</span><a href="/teaching-tools/">Teaching tools</a><span class="tools"><a href="/licenses/">Licenses</a><a href="https://github.com/DidaWorks">GitHub</a></span></nav>
+<header><div class="in">
+  <div class="proto">Under active development</div>
+  <h1>DidaWorks</h1>
+  <p>Free and open-source tools designed around real teaching workflows.</p>
+</div></header>
+<main id="main">
+<h2>Projects</h2>
+<div class="cards">
+  <article class="card">
+    <h3><a href="https://github.com/DidaWorks/didarec">DidaRec</a></h3>
+    <p>A free and open-source screen recorder for educators.</p>
+    <div class="tag">MIT License</div>
+  </article>
+  <article class="card">
+    <h3><a href="/teaching-tools/">Teaching tools</a></h3>
+    <p>Small browser tools for course planning, exams, and clinical teaching: a workload estimator, a syllabus date shifter, and nursing faculty toolkits.</p>
+    <div class="tag">MIT License, with one CC BY-NC-SA adaptation</div>
+  </article>
+  <article class="card">
+    <h3><a href="https://github.com/DidaWorks/commons">DidaCommons</a></h3>
+    <p>The community and shared-resource space surrounding DidaWorks.</p>
+    <div class="tag">Community</div>
+  </article>
+</div>
+<h2>Principles</h2>
+<ul class="principles">
+  <li>Free and open-source</li><li>Designed with educators in mind</li><li>Privacy-conscious</li>
+  <li>Accessible</li><li>Uncomplicated</li><li>Useful without subscriptions or mandatory accounts</li>
+</ul>
+<h2>Project status</h2>
+<p>DidaWorks is currently an independent portfolio and open-source project under active development.</p>
+
+</main>
+<footer class="sitefoot"><p><strong>DidaWorks</strong>: free and open-source tools designed around real teaching workflows. Code: <a href="/licenses/#mit">MIT License</a>, except where a page says otherwise. <a href="/licenses/">Licenses and attributions</a> · <a href="https://github.com/DidaWorks/didaworks.github.io">Source on GitHub</a></p></footer>
+</body>
+</html>
