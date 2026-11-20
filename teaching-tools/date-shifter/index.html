@@ -8,13 +8,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"></script>
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/brand/dw_favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
 <style>
-  :root{--blue:#003466;--blue-2:#0b4a85;--tint:#e8eef6;--gold:#FFD200;--ink:#1b1f24;--muted:#525a66;--line:#d5dbe3;--bg:#f6f8fb;--ok:#1d6b3a;--warn:#8a5a00;--bad:#a3271f}
+  :root{--blue:#003466;--blue-2:#0b4a85;--tint:#E3EADF;--gold:#FFD200;--ink:#1b1f24;--muted:#525a66;--line:#C9C5BA;--bg:#F5F3EC;--ok:#1d6b3a;--warn:#8a5a00;--bad:#a3271f}
   *{box-sizing:border-box}
   body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.45}
   header{background:var(--blue);color:#fff;padding:22px 24px 18px;border-bottom:5px solid var(--gold)}
   header h1{margin:0 0 4px;font-size:1.55rem}
-  header p{margin:0;color:#dfe8f3;max-width:75ch}
+  header p{margin:0;color:var(--meadow);max-width:75ch}
   .proto{display:inline-block;background:var(--gold);color:var(--blue);font-weight:700;font-size:.75rem;padding:2px 8px;border-radius:3px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
   main{max-width:1100px;margin:22px auto;padding:0 18px}
   section{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin-bottom:16px}
@@ -23,11 +26,11 @@
   .hint{color:var(--muted);font-size:.88rem;margin:2px 0 12px}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 16px}
   label{display:block;font-size:.88rem;font-weight:600;margin-bottom:4px}
-  input[type=date],input[type=text],textarea,select{width:100%;padding:8px 9px;border:1px solid #9aa6b5;border-radius:5px;font:inherit;font-size:.95rem;background:#fff;color:var(--ink)}
+  input[type=date],input[type=text],textarea,select{width:100%;padding:8px 9px;border:1px solid #857F75;border-radius:5px;font:inherit;font-size:.95rem;background:#fff;color:var(--ink)}
   textarea{min-height:70px}
   input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,.drop:focus-visible{outline:3px solid var(--blue-2);outline-offset:2px}
-  .drop{border:2px dashed #8fa3bb;border-radius:8px;padding:26px;text-align:center;background:var(--tint);cursor:pointer}
-  .drop.over{background:#d6e3f2;border-color:var(--blue)}
+  .drop{border:2px dashed #857F75;border-radius:8px;padding:26px;text-align:center;background:var(--tint);cursor:pointer}
+  .drop.over{background:#E3EADF;border-color:var(--blue)}
   .drop strong{color:var(--blue)}
   button{background:var(--blue);color:#fff;border:0;border-radius:5px;padding:9px 14px;font-weight:700;font-size:.9rem;cursor:pointer}
   button.secondary{background:#fff;color:var(--blue);border:2px solid var(--blue)}
@@ -36,7 +39,7 @@
   .status{font-size:.9rem;margin-top:10px}
   .status.err{color:var(--bad);font-weight:600}
   table{width:100%;border-collapse:collapse;font-size:.88rem}
-  th,td{padding:7px 8px;border-bottom:1px solid #e6eaef;text-align:left;vertical-align:top}
+  th,td{padding:7px 8px;border-bottom:1px solid #E3EADF;text-align:left;vertical-align:top}
   thead th{background:var(--tint);color:var(--blue);font-size:.78rem;text-transform:uppercase;letter-spacing:.3px;position:sticky;top:0}
   td.ctx{color:var(--muted);max-width:340px}
   td.ctx mark{background:#fff1a8;color:var(--ink);padding:0 2px}
@@ -50,34 +53,53 @@
   .note{background:var(--tint);border-left:4px solid var(--blue);padding:8px 12px;font-size:.88rem;border-radius:0 4px 4px 0;margin-top:10px}
   footer{max-width:1100px;margin:0 auto 30px;padding:0 18px;font-size:.8rem;color:var(--muted)}
   .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-  /* ---- DidaWorks site layer (shared) ---- */
+  /* ---- DidaWorks site layer (shared) ----
+     Brand: Brand Standards/didaworks_brand_standards.md (Flagstaff palette). Old variable
+     names kept for the tools: --blue = Ponderosa, --blue-2 = Peaks blue, --tint = Meadow,
+     --gold = Aspen gold, --ink = Dark sky, --muted = Basalt, --line = Limestone, --bg = Aspen bark. */
   @font-face{font-family:"Roboto";src:url("/assets/fonts/Roboto-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
   @font-face{font-family:"Roboto";src:url("/assets/fonts/Roboto-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
   @font-face{font-family:"Roboto Slab";src:url("/assets/fonts/RobotoSlab-SemiBold.ttf") format("truetype");font-weight:600;font-display:swap}
-  :root{--blue:#1F2B3D;--blue-2:#3A6EA5;--tint:#E9F1F8;--gold:#E0997A;--ink:#22272E;--muted:#585D66;--line:#DED6C7;--bg:#FAF6EE;
-        --c1:#1F2B3D;--c2:#3A6EA5;--c3:#9CCDEE;--c4:#E0997A;--c5:#6F84A3;--c6:#2D8A7A;--c7:#A8553A}
-  body{font-family:"Roboto",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
-  header h1,h2{font-family:"Roboto Slab","Roboto",Georgia,serif;font-weight:600}
-  .skip{position:absolute;left:-9999px;top:0;background:#fff;color:#1F2B3D;padding:8px 12px;z-index:10;font-weight:700}
+  :root{--blue:#234A3A;--blue-2:#3D6A8A;--tint:#E3EADF;--gold:#F2CF6B;--ink:#1B2230;--muted:#4F4C47;--line:#C9C5BA;--bg:#F5F3EC;
+        --ponderosa:#234A3A;--aspen-gold:#F2CF6B;--aspen-bark:#F5F3EC;--meadow:#E3EADF;--peaks:#3D6A8A;--cinder:#9A4A2C;--basalt:#4F4C47;--limestone:#C9C5BA;--dark-sky:#1B2230;
+        --c1:#234A3A;--c2:#F2CF6B;--c3:#3D6A8A;--c4:#C9C5BA;--c5:#9A4A2C;--c6:#E3EADF;--c7:#4F4C47}
+  body{font-family:"Roboto",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+  header h1,h2,h3{font-family:"Roboto Slab","Roboto",Georgia,serif;font-weight:600}
+  a{color:var(--peaks)}
+  .skip{position:absolute;left:-9999px;top:0;background:#fff;color:var(--ponderosa);padding:8px 12px;z-index:10;font-weight:700}
   .skip:focus{left:8px;top:8px}
-  .sitebar{background:#16202E;color:#EFE6D3;display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:8px 24px;font-size:.88rem}
-  .sitebar a{color:#EFE6D3;text-decoration:none}
-  .sitebar a:hover,.sitebar a:focus-visible{text-decoration:underline}
-  .sitebar .brand{font-family:"Roboto Slab","Roboto",serif;font-weight:600;color:#E0997A;font-size:1rem}
-  .sitebar .sep{color:#6F84A3}
-  .sitebar .tools{display:flex;flex-wrap:wrap;gap:4px 14px;margin-left:auto}
-  .sitebar .tools a[aria-current=page]{color:#9CCDEE;font-weight:700;text-decoration:underline;text-underline-offset:3px}
-  .sitebar a:focus-visible{outline:2px solid #9CCDEE;outline-offset:2px}
-  .proto{background:var(--gold)!important;color:#1F2B3D!important}
-  header{border-bottom-color:var(--gold)!important}
-  .sitefoot{max-width:1180px;margin:0 auto 32px;padding:14px 18px 0;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted)}
-  .sitefoot a{color:#2F5D8A}
+  .sitebar{background:var(--ponderosa);color:var(--aspen-bark);display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;padding:10px 24px;font-size:.9rem;border-bottom:1px solid rgba(245,243,236,.18)}
+  .sitebar a{color:var(--aspen-bark);text-decoration:none}
+  .sitebar a:hover,.sitebar a:focus-visible{text-decoration:underline;text-underline-offset:3px}
+  .sitebar .brand{font-family:"Roboto Slab","Roboto",serif;font-weight:600;color:var(--aspen-bark);font-size:1.1rem}
+  .sitebar .brand{display:inline-flex;align-items:center;gap:8px}
+  .sitebar .brand img{height:28px;width:28px}
+  .sitebar .sep{color:var(--limestone)}
+  .sitebar .tools{display:flex;flex-wrap:wrap;gap:4px 16px;margin-left:auto}
+  .sitebar a[aria-current=page]{color:var(--aspen-gold);font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+  .sitebar a:focus-visible{outline:2px solid var(--aspen-gold);outline-offset:2px}
+  header{border-bottom:3px solid var(--gold)!important}
+  header p{color:var(--meadow)!important}
+  .proto{background:var(--gold)!important;color:var(--ponderosa)!important;border-radius:999px!important;padding:3px 10px!important}
+  section.card,.card{border-radius:14px}
+  button,.btn,button.btn,button.secondary,button.btn.secondary,button.mini{border-radius:999px}
+  .lvl button{border-radius:999px}
+  nav button{border-radius:8px 8px 0 0}
+  nav button{color:var(--meadow)}
+  :focus-visible{outline-color:var(--peaks)}
+  .sitefoot{max-width:none!important;margin:40px 0 0!important;padding:16px 24px!important;background:var(--basalt);color:var(--aspen-bark)!important;border-top:0!important;font-size:.85rem}
+  .sitefoot .in{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px}
+  .sitefoot .brand{font-family:"Roboto Slab","Roboto",serif;font-weight:600;font-size:1rem}
+  .sitefoot a{color:var(--aspen-gold);text-decoration:underline;text-underline-offset:3px}
+  .sitefoot a:focus-visible{outline:2px solid var(--aspen-gold);outline-offset:2px}
+  .sitefoot .credit{margin-left:auto}
+  .sw{box-shadow:inset 0 0 0 1px rgba(27,34,48,.35)}
 
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
-<nav class="sitebar" aria-label="DidaWorks"><a class="brand" href="/">DidaWorks</a><span class="sep" aria-hidden="true">/</span><a href="/teaching-tools/">Teaching tools</a><span class="tools"><a href="/teaching-tools/workload-estimator/">Workload estimator</a><a href="/teaching-tools/date-shifter/" aria-current="page">Date shifter</a><a href="/teaching-tools/nursing-exam-tools/">Nursing exam tools</a><a href="/teaching-tools/nursing-clinical-tools/">Nursing clinical tools</a></span></nav>
+<nav class="sitebar" aria-label="DidaWorks"><a class="brand" href="/"><img src="/assets/brand/dw_owl_small_bark.svg" alt="" width="28" height="28">DidaWorks</a><span class="sep" aria-hidden="true">/</span><a href="/teaching-tools/">Teaching tools</a><span class="tools"><a href="/teaching-tools/workload-estimator/">Workload estimator</a><a href="/teaching-tools/date-shifter/" aria-current="page">Date shifter</a><a href="/teaching-tools/nursing-exam-tools/">Nursing exam tools</a><a href="/teaching-tools/nursing-clinical-tools/">Nursing clinical tools</a></span></nav>
 <header>
   <div class="proto">Prototype · free and open source</div>
   <h1>Syllabus Date Shifter</h1>
@@ -509,6 +531,6 @@ $("copyBtn").addEventListener("click", async ()=>{
 window.__ds = {findDates, makeShifter, formatLike, parseInputDate, collectParas, replaceInPara, loadDocx};
 })();
 </script>
-<footer class="sitefoot"><p><strong>DidaWorks</strong>: free and open-source tools designed around real teaching workflows. Code: <a href="/licenses/#mit">MIT License</a>. <a href="/licenses/">Licenses and attributions</a> · <a href="https://github.com/DidaWorks/didaworks.github.io">Source on GitHub</a></p></footer>
+<footer class="sitefoot"><div class="in"><span class="brand">DidaWorks</span><span>Free and open source: <a href="/licenses/#mit">MIT License</a>, except where a page says otherwise.</span><a href="/licenses/">Licenses and attributions</a><a href="https://github.com/DidaWorks/commons/discussions">Suggest a feature in DidaCommons</a><a href="https://github.com/DidaWorks/didaworks.github.io">Source on GitHub</a><span class="credit">Made by Blue Brazelton</span></div></footer>
 </body>
 </html>

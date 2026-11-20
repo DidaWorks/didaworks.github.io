@@ -4,99 +4,138 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DidaWorks</title>
-<!-- INTERIM HOME PAGE: built only from the DidaWorks GitHub profile text. Pending the Oracle review of the DidaWorks / DidaCommons identity; replace freely. -->
+<title>DidaWorks: free and open-source teaching tools</title>
+<meta name="description" content="Free, open-source teaching tools built around how faculty actually work. No accounts, no subscriptions.">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/brand/dw_favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
 <style>
-  /* ---- DidaWorks site layer (shared) ---- */
+  /* ---- DidaWorks site layer (shared) ----
+     Brand: Brand Standards/didaworks_brand_standards.md (Flagstaff palette). Old variable
+     names kept for the tools: --blue = Ponderosa, --blue-2 = Peaks blue, --tint = Meadow,
+     --gold = Aspen gold, --ink = Dark sky, --muted = Basalt, --line = Limestone, --bg = Aspen bark. */
   @font-face{font-family:"Roboto";src:url("/assets/fonts/Roboto-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
   @font-face{font-family:"Roboto";src:url("/assets/fonts/Roboto-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
   @font-face{font-family:"Roboto Slab";src:url("/assets/fonts/RobotoSlab-SemiBold.ttf") format("truetype");font-weight:600;font-display:swap}
-  :root{--blue:#1F2B3D;--blue-2:#3A6EA5;--tint:#E9F1F8;--gold:#E0997A;--ink:#22272E;--muted:#585D66;--line:#DED6C7;--bg:#FAF6EE;
-        --c1:#1F2B3D;--c2:#3A6EA5;--c3:#9CCDEE;--c4:#E0997A;--c5:#6F84A3;--c6:#2D8A7A;--c7:#A8553A}
-  body{font-family:"Roboto",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
-  header h1,h2{font-family:"Roboto Slab","Roboto",Georgia,serif;font-weight:600}
-  .skip{position:absolute;left:-9999px;top:0;background:#fff;color:#1F2B3D;padding:8px 12px;z-index:10;font-weight:700}
+  :root{--blue:#234A3A;--blue-2:#3D6A8A;--tint:#E3EADF;--gold:#F2CF6B;--ink:#1B2230;--muted:#4F4C47;--line:#C9C5BA;--bg:#F5F3EC;
+        --ponderosa:#234A3A;--aspen-gold:#F2CF6B;--aspen-bark:#F5F3EC;--meadow:#E3EADF;--peaks:#3D6A8A;--cinder:#9A4A2C;--basalt:#4F4C47;--limestone:#C9C5BA;--dark-sky:#1B2230;
+        --c1:#234A3A;--c2:#F2CF6B;--c3:#3D6A8A;--c4:#C9C5BA;--c5:#9A4A2C;--c6:#E3EADF;--c7:#4F4C47}
+  body{font-family:"Roboto",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+  header h1,h2,h3{font-family:"Roboto Slab","Roboto",Georgia,serif;font-weight:600}
+  a{color:var(--peaks)}
+  .skip{position:absolute;left:-9999px;top:0;background:#fff;color:var(--ponderosa);padding:8px 12px;z-index:10;font-weight:700}
   .skip:focus{left:8px;top:8px}
-  .sitebar{background:#16202E;color:#EFE6D3;display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:8px 24px;font-size:.88rem}
-  .sitebar a{color:#EFE6D3;text-decoration:none}
-  .sitebar a:hover,.sitebar a:focus-visible{text-decoration:underline}
-  .sitebar .brand{font-family:"Roboto Slab","Roboto",serif;font-weight:600;color:#E0997A;font-size:1rem}
-  .sitebar .sep{color:#6F84A3}
-  .sitebar .tools{display:flex;flex-wrap:wrap;gap:4px 14px;margin-left:auto}
-  .sitebar .tools a[aria-current=page]{color:#9CCDEE;font-weight:700;text-decoration:underline;text-underline-offset:3px}
-  .sitebar a:focus-visible{outline:2px solid #9CCDEE;outline-offset:2px}
-  .proto{background:var(--gold)!important;color:#1F2B3D!important}
-  header{border-bottom-color:var(--gold)!important}
-  .sitefoot{max-width:1180px;margin:0 auto 32px;padding:14px 18px 0;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted)}
-  .sitefoot a{color:#2F5D8A}
-
+  .sitebar{background:var(--ponderosa);color:var(--aspen-bark);display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;padding:10px 24px;font-size:.9rem;border-bottom:1px solid rgba(245,243,236,.18)}
+  .sitebar a{color:var(--aspen-bark);text-decoration:none}
+  .sitebar a:hover,.sitebar a:focus-visible{text-decoration:underline;text-underline-offset:3px}
+  .sitebar .brand{font-family:"Roboto Slab","Roboto",serif;font-weight:600;color:var(--aspen-bark);font-size:1.1rem}
+  .sitebar .brand{display:inline-flex;align-items:center;gap:8px}
+  .sitebar .brand img{height:28px;width:28px}
+  .sitebar .sep{color:var(--limestone)}
+  .sitebar .tools{display:flex;flex-wrap:wrap;gap:4px 16px;margin-left:auto}
+  .sitebar a[aria-current=page]{color:var(--aspen-gold);font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+  .sitebar a:focus-visible{outline:2px solid var(--aspen-gold);outline-offset:2px}
+  header{border-bottom:3px solid var(--gold)!important}
+  header p{color:var(--meadow)!important}
+  .proto{background:var(--gold)!important;color:var(--ponderosa)!important;border-radius:999px!important;padding:3px 10px!important}
+  section.card,.card{border-radius:14px}
+  button,.btn,button.btn,button.secondary,button.btn.secondary,button.mini{border-radius:999px}
+  .lvl button{border-radius:999px}
+  nav button{border-radius:8px 8px 0 0}
+  nav button{color:var(--meadow)}
+  :focus-visible{outline-color:var(--peaks)}
+  .sitefoot{max-width:none!important;margin:40px 0 0!important;padding:16px 24px!important;background:var(--basalt);color:var(--aspen-bark)!important;border-top:0!important;font-size:.85rem}
+  .sitefoot .in{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px}
+  .sitefoot .brand{font-family:"Roboto Slab","Roboto",serif;font-weight:600;font-size:1rem}
+  .sitefoot a{color:var(--aspen-gold);text-decoration:underline;text-underline-offset:3px}
+  .sitefoot a:focus-visible{outline:2px solid var(--aspen-gold);outline-offset:2px}
+  .sitefoot .credit{margin-left:auto}
+  .sw{box-shadow:inset 0 0 0 1px rgba(27,34,48,.35)}
   *{box-sizing:border-box}
-  body{margin:0;color:var(--ink);background:var(--bg);line-height:1.55}
-  header{background:var(--blue);color:#fff;padding:26px 24px 22px;border-bottom:5px solid var(--gold)}
-  header .in,main,.sitefoot{max-width:1080px;margin-left:auto;margin-right:auto}
-  header h1{margin:0 0 6px;font-size:1.9rem}
-  header p{margin:0;color:#dfe8f3;max-width:72ch;font-size:1.05rem}
-  .proto{display:inline-block;font-weight:700;font-size:.75rem;padding:2px 8px;border-radius:3px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
-  main{padding:26px 18px 10px}
-  h2{color:var(--blue);font-size:1.3rem;margin:26px 0 8px}
-  a{color:#2F5D8A}
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column}
-  .card h3{margin:0 0 6px;font-family:"Roboto Slab","Roboto",serif;font-weight:600;font-size:1.12rem}
-  .card h3 a{color:var(--blue);text-decoration:none}
+  body{margin:0;line-height:1.55}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .hero{background:var(--ponderosa);color:var(--aspen-bark);padding:44px 0 48px;border-bottom:3px solid var(--aspen-gold)}
+  .hero h1{font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.2;margin:0 0 12px;max-width:22ch}
+  .hero h1 em{font-style:normal;color:var(--aspen-gold)}
+  .hero p{font-size:1.1rem;max-width:56ch;margin:0 0 24px}
+  .proto{display:inline-block;font-weight:700;font-size:.75rem;margin-bottom:14px;text-transform:uppercase;letter-spacing:.5px}
+  .pill{display:inline-block;font-weight:700;text-decoration:none;padding:10px 18px;border-radius:999px;margin:0 10px 10px 0}
+  .pill.gold{background:var(--aspen-gold);color:var(--ponderosa)}
+  .pill.ghost{color:var(--aspen-bark);border:2px solid var(--aspen-gold)}
+  .pill.pine{background:var(--ponderosa);color:var(--aspen-bark)}
+  .pill:hover,.pill:focus-visible{text-decoration:underline;text-underline-offset:3px}
+  .hero .pill:focus-visible{outline:3px solid var(--aspen-gold);outline-offset:3px}
+  main h2{color:var(--ponderosa);font-size:1.45rem;margin:40px 0 4px}
+  .lede{color:var(--basalt);margin:0 0 18px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  .card{position:relative;background:#fff;border:1px solid var(--limestone);border-radius:14px;padding:20px;display:flex;flex-direction:column}
+  .card.featured{background:var(--meadow);border:2px solid var(--ponderosa)}
+  .card h3{margin:0 0 6px;font-size:1.15rem}
+  .card h3 a{color:var(--ponderosa);text-decoration:none}
+  .card h3 a::after{content:"";position:absolute;inset:0;border-radius:14px}
   .card h3 a:hover,.card h3 a:focus-visible{text-decoration:underline}
-  .card h3 a::after{content:"";position:absolute;inset:0}
-  .card{position:relative}
-  .card p{margin:0 0 10px;color:var(--ink);font-size:.95rem}
-  .card ul{margin:0 0 10px;padding-left:18px;font-size:.88rem;color:var(--muted)}
-  .card .tag{margin-top:auto;font-size:.78rem;color:var(--muted)}
-  .card:hover{border-color:var(--blue-2);box-shadow:0 2px 10px rgba(31,43,61,.08)}
-  .card:focus-within{outline:3px solid var(--blue-2);outline-offset:2px}
-  .note{background:var(--tint);border-left:4px solid var(--blue);padding:10px 14px;border-radius:0 6px 6px 0;font-size:.92rem;margin:18px 0}
-  ul.principles{columns:2;padding-left:18px} @media (max-width:640px){ul.principles{columns:1}}
-  table{width:100%;border-collapse:collapse;font-size:.92rem;background:#fff;border:1px solid var(--line)}
-  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #ece6da;vertical-align:top}
-  thead th{background:var(--tint);color:var(--blue);font-size:.8rem;text-transform:uppercase;letter-spacing:.3px}
-  :focus-visible{outline:3px solid var(--blue-2);outline-offset:2px}
-
+  .card:focus-within{outline:3px solid var(--peaks);outline-offset:2px}
+  .card:hover{border-color:var(--ponderosa)}
+  .card p{margin:0 0 14px;font-size:.97rem}
+  .card .meta{margin-top:auto;padding-top:10px;border-top:1px solid var(--limestone);font-size:.85rem;color:var(--basalt)}
+  .card.featured .meta{border-top-color:#B9C4B3}
+  .card .more{position:relative;z-index:1;font-size:.9rem}
+  .tag{display:inline-block;align-self:flex-start;background:var(--aspen-gold);color:var(--ponderosa);font-size:.75rem;font-weight:700;padding:2px 10px;border-radius:999px;margin-bottom:10px}
+  .commons{margin:36px 0 8px;background:var(--meadow);border:2px dashed var(--ponderosa);border-radius:14px;padding:20px 22px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .commons div{flex:1;min-width:240px}
+  .commons h2{margin:0 0 4px;font-size:1.2rem}
+  .commons p{margin:0}
+  .commons .pill{margin:0}
+  ul.principles{columns:2;padding-left:20px;margin:8px 0 0} @media (max-width:640px){ul.principles{columns:1}}
+  :focus-visible{outline:3px solid var(--peaks);outline-offset:2px}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
-<nav class="sitebar" aria-label="DidaWorks"><a class="brand" href="/">DidaWorks</a><span class="sep" aria-hidden="true">/</span><a href="/teaching-tools/">Teaching tools</a><span class="tools"><a href="/licenses/">Licenses</a><a href="https://github.com/DidaWorks">GitHub</a></span></nav>
-<header><div class="in">
+<nav class="sitebar" aria-label="DidaWorks"><a class="brand" href="/"><img src="/assets/brand/dw_owl_small_bark.svg" alt="" width="28" height="28">DidaWorks</a><span class="tools"><a href="/teaching-tools/">Tools</a><a href="https://bluebrazelton-dotcom.github.io/DidaRec/">DidaRec</a><a href="/commons/">Commons</a><a href="/licenses/">Licenses</a></span></nav>
+<header class="hero"><div class="wrap">
   <div class="proto">Under active development</div>
-  <h1>DidaWorks</h1>
-  <p>Free and open-source tools designed around real teaching workflows.</p>
+  <h1>Teaching tools that <em>get out of your way</em>.</h1>
+  <p>DidaWorks™ makes free, open-source tools built around how faculty actually work. No accounts, no subscriptions, and your files never leave your browser.</p>
+  <a class="pill gold" href="/teaching-tools/">Browse the tools</a><a class="pill ghost" href="https://bluebrazelton-dotcom.github.io/DidaRec/">Try DidaRec</a>
 </div></header>
-<main id="main">
-<h2>Projects</h2>
+<main id="main" class="wrap">
+<h2>Pick a tool</h2>
+<p class="lede">Each one opens in your browser and works right away.</p>
 <div class="cards">
-  <article class="card">
-    <h3><a href="https://github.com/DidaWorks/didarec">DidaRec</a></h3>
-    <p>A free and open-source screen recorder for educators.</p>
-    <div class="tag">MIT License</div>
+  <article class="card featured">
+    <span class="tag">Featured</span>
+    <h3><a href="https://bluebrazelton-dotcom.github.io/DidaRec/">DidaRec™</a></h3>
+    <p>Record your screen and webcam for lectures. If the tab crashes, you lose seconds, not the hour.</p>
+    <a class="more" href="https://bluebrazelton-dotcom.github.io/DidaRec/guide.html">Read the guide</a>
+    <div class="meta">Chrome or Edge recommended · MIT License</div>
   </article>
   <article class="card">
-    <h3><a href="/teaching-tools/">Teaching tools</a></h3>
-    <p>Small browser tools for course planning, exams, and clinical teaching: a workload estimator, a syllabus date shifter, and nursing faculty toolkits.</p>
-    <div class="tag">MIT License, with one CC BY-NC-SA adaptation</div>
+    <h3><a href="/teaching-tools/date-shifter/">Syllabus Date Shifter</a></h3>
+    <p>Move every date in a syllabus or course schedule to a new term in one go.</p>
+    <div class="meta">Word files keep their formatting</div>
   </article>
   <article class="card">
-    <h3><a href="https://github.com/DidaWorks/commons">DidaCommons</a></h3>
-    <p>The community and shared-resource space surrounding DidaWorks.</p>
-    <div class="tag">Community</div>
+    <h3><a href="/teaching-tools/workload-estimator/">Course Workload Estimator</a></h3>
+    <p>See how many hours a week your course really asks of students, against a credit-hour benchmark.</p>
+    <div class="meta">Adapted from Rice and Wake Forest · CC BY-NC-SA 4.0</div>
+  </article>
+  <article class="card">
+    <h3><a href="/teaching-tools/">Nursing faculty tools</a></h3>
+    <p>Item analysis, test blueprints, exam timing, dosage problems, clinical hours, rotation grids, and a feedback comment bank.</p>
+    <div class="meta">Exam and clinical toolkits</div>
   </article>
 </div>
-<h2>Principles</h2>
+<section class="commons" aria-labelledby="commons-h">
+  <div><h2 id="commons-h">Join DidaCommons™</h2><p>Suggest a feature, share a template, or tell us what broke. Built with educators, not just for them.</p></div>
+  <a class="pill pine" href="/commons/">Visit DidaCommons</a>
+</section>
+<h2>What we hold to</h2>
 <ul class="principles">
   <li>Free and open-source</li><li>Designed with educators in mind</li><li>Privacy-conscious</li>
   <li>Accessible</li><li>Uncomplicated</li><li>Useful without subscriptions or mandatory accounts</li>
 </ul>
-<h2>Project status</h2>
-<p>DidaWorks is currently an independent portfolio and open-source project under active development.</p>
-
 </main>
-<footer class="sitefoot"><p><strong>DidaWorks</strong>: free and open-source tools designed around real teaching workflows. Code: <a href="/licenses/#mit">MIT License</a>, except where a page says otherwise. <a href="/licenses/">Licenses and attributions</a> · <a href="https://github.com/DidaWorks/didaworks.github.io">Source on GitHub</a></p></footer>
+<footer class="sitefoot"><div class="in"><span class="brand">DidaWorks</span><span>Free and open source: <a href="/licenses/#mit">MIT License</a>, except where a page says otherwise.</span><a href="/licenses/">Licenses and attributions</a><a href="/commons/">DidaCommons</a><a href="https://github.com/DidaWorks/didaworks.github.io">Source on GitHub</a><span class="credit">Made by Blue Brazelton</span></div></footer>
 </body>
 </html>

@@ -6,7 +6,8 @@ Public website for the DidaWorks project: free and open-source tools designed ar
 
 | Path | What it is |
 |---|---|
-| `/` | Home page. **Interim**: built only from the DidaWorks GitHub profile text, pending a review of the DidaWorks / DidaCommons identity. |
+| `/` | Home page |
+| `/commons/` | DidaCommons: what it is and a link to GitHub Discussions |
 | `/teaching-tools/` | Hub for the browser-based teaching tools |
 | `/teaching-tools/workload-estimator/` | Course Workload Estimator (CC BY-NC-SA 4.0 adaptation; see below) |
 | `/teaching-tools/date-shifter/` | Syllabus Date Shifter |
@@ -16,6 +17,10 @@ Public website for the DidaWorks project: free and open-source tools designed ar
 | `/assets/fonts/` | Roboto (SIL OFL 1.1) and Roboto Slab (Apache 2.0), with license texts |
 
 Every tool is a single self-contained HTML page. Nothing is sent to a server: files, data, and text stay in the visitor's browser. Pages are marked `noindex` while they're prototypes.
+
+## Brand
+
+Colors, type and voice follow the DidaWorks brand standards (Flagstaff palette: Ponderosa, Aspen gold, Aspen bark, Meadow, Peaks blue, Cinder, Basalt, Limestone, Dark sky). Each page carries the shared site layer in its `<style>` block, marked `DidaWorks site layer (shared)`; change it on every page together.
 
 ## Licenses
 

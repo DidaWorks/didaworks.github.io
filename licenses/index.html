@@ -5,42 +5,64 @@
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Licenses and attributions · DidaWorks</title>
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/brand/dw_favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
 <style>
-  /* ---- DidaWorks site layer (shared) ---- */
+  /* ---- DidaWorks site layer (shared) ----
+     Brand: Brand Standards/didaworks_brand_standards.md (Flagstaff palette). Old variable
+     names kept for the tools: --blue = Ponderosa, --blue-2 = Peaks blue, --tint = Meadow,
+     --gold = Aspen gold, --ink = Dark sky, --muted = Basalt, --line = Limestone, --bg = Aspen bark. */
   @font-face{font-family:"Roboto";src:url("/assets/fonts/Roboto-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
   @font-face{font-family:"Roboto";src:url("/assets/fonts/Roboto-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
   @font-face{font-family:"Roboto Slab";src:url("/assets/fonts/RobotoSlab-SemiBold.ttf") format("truetype");font-weight:600;font-display:swap}
-  :root{--blue:#1F2B3D;--blue-2:#3A6EA5;--tint:#E9F1F8;--gold:#E0997A;--ink:#22272E;--muted:#585D66;--line:#DED6C7;--bg:#FAF6EE;
-        --c1:#1F2B3D;--c2:#3A6EA5;--c3:#9CCDEE;--c4:#E0997A;--c5:#6F84A3;--c6:#2D8A7A;--c7:#A8553A}
-  body{font-family:"Roboto",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
-  header h1,h2{font-family:"Roboto Slab","Roboto",Georgia,serif;font-weight:600}
-  .skip{position:absolute;left:-9999px;top:0;background:#fff;color:#1F2B3D;padding:8px 12px;z-index:10;font-weight:700}
+  :root{--blue:#234A3A;--blue-2:#3D6A8A;--tint:#E3EADF;--gold:#F2CF6B;--ink:#1B2230;--muted:#4F4C47;--line:#C9C5BA;--bg:#F5F3EC;
+        --ponderosa:#234A3A;--aspen-gold:#F2CF6B;--aspen-bark:#F5F3EC;--meadow:#E3EADF;--peaks:#3D6A8A;--cinder:#9A4A2C;--basalt:#4F4C47;--limestone:#C9C5BA;--dark-sky:#1B2230;
+        --c1:#234A3A;--c2:#F2CF6B;--c3:#3D6A8A;--c4:#C9C5BA;--c5:#9A4A2C;--c6:#E3EADF;--c7:#4F4C47}
+  body{font-family:"Roboto",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+  header h1,h2,h3{font-family:"Roboto Slab","Roboto",Georgia,serif;font-weight:600}
+  a{color:var(--peaks)}
+  .skip{position:absolute;left:-9999px;top:0;background:#fff;color:var(--ponderosa);padding:8px 12px;z-index:10;font-weight:700}
   .skip:focus{left:8px;top:8px}
-  .sitebar{background:#16202E;color:#EFE6D3;display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:8px 24px;font-size:.88rem}
-  .sitebar a{color:#EFE6D3;text-decoration:none}
-  .sitebar a:hover,.sitebar a:focus-visible{text-decoration:underline}
-  .sitebar .brand{font-family:"Roboto Slab","Roboto",serif;font-weight:600;color:#E0997A;font-size:1rem}
-  .sitebar .sep{color:#6F84A3}
-  .sitebar .tools{display:flex;flex-wrap:wrap;gap:4px 14px;margin-left:auto}
-  .sitebar .tools a[aria-current=page]{color:#9CCDEE;font-weight:700;text-decoration:underline;text-underline-offset:3px}
-  .sitebar a:focus-visible{outline:2px solid #9CCDEE;outline-offset:2px}
-  .proto{background:var(--gold)!important;color:#1F2B3D!important}
-  header{border-bottom-color:var(--gold)!important}
-  .sitefoot{max-width:1180px;margin:0 auto 32px;padding:14px 18px 0;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted)}
-  .sitefoot a{color:#2F5D8A}
+  .sitebar{background:var(--ponderosa);color:var(--aspen-bark);display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;padding:10px 24px;font-size:.9rem;border-bottom:1px solid rgba(245,243,236,.18)}
+  .sitebar a{color:var(--aspen-bark);text-decoration:none}
+  .sitebar a:hover,.sitebar a:focus-visible{text-decoration:underline;text-underline-offset:3px}
+  .sitebar .brand{font-family:"Roboto Slab","Roboto",serif;font-weight:600;color:var(--aspen-bark);font-size:1.1rem}
+  .sitebar .brand{display:inline-flex;align-items:center;gap:8px}
+  .sitebar .brand img{height:28px;width:28px}
+  .sitebar .sep{color:var(--limestone)}
+  .sitebar .tools{display:flex;flex-wrap:wrap;gap:4px 16px;margin-left:auto}
+  .sitebar a[aria-current=page]{color:var(--aspen-gold);font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+  .sitebar a:focus-visible{outline:2px solid var(--aspen-gold);outline-offset:2px}
+  header{border-bottom:3px solid var(--gold)!important}
+  header p{color:var(--meadow)!important}
+  .proto{background:var(--gold)!important;color:var(--ponderosa)!important;border-radius:999px!important;padding:3px 10px!important}
+  section.card,.card{border-radius:14px}
+  button,.btn,button.btn,button.secondary,button.btn.secondary,button.mini{border-radius:999px}
+  .lvl button{border-radius:999px}
+  nav button{border-radius:8px 8px 0 0}
+  nav button{color:var(--meadow)}
+  :focus-visible{outline-color:var(--peaks)}
+  .sitefoot{max-width:none!important;margin:40px 0 0!important;padding:16px 24px!important;background:var(--basalt);color:var(--aspen-bark)!important;border-top:0!important;font-size:.85rem}
+  .sitefoot .in{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px}
+  .sitefoot .brand{font-family:"Roboto Slab","Roboto",serif;font-weight:600;font-size:1rem}
+  .sitefoot a{color:var(--aspen-gold);text-decoration:underline;text-underline-offset:3px}
+  .sitefoot a:focus-visible{outline:2px solid var(--aspen-gold);outline-offset:2px}
+  .sitefoot .credit{margin-left:auto}
+  .sw{box-shadow:inset 0 0 0 1px rgba(27,34,48,.35)}
 
   *{box-sizing:border-box}
   body{margin:0;color:var(--ink);background:var(--bg);line-height:1.55}
   header{background:var(--blue);color:#fff;padding:26px 24px 22px;border-bottom:5px solid var(--gold)}
   header .in,main,.sitefoot{max-width:1080px;margin-left:auto;margin-right:auto}
   header h1{margin:0 0 6px;font-size:1.9rem}
-  header p{margin:0;color:#dfe8f3;max-width:72ch;font-size:1.05rem}
+  header p{margin:0;color:var(--meadow);max-width:72ch;font-size:1.05rem}
   .proto{display:inline-block;font-weight:700;font-size:.75rem;padding:2px 8px;border-radius:3px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
   main{padding:26px 18px 10px}
   h2{color:var(--blue);font-size:1.3rem;margin:26px 0 8px}
-  a{color:#2F5D8A}
+  a{color:var(--peaks)}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column}
   .card h3{margin:0 0 6px;font-family:"Roboto Slab","Roboto",serif;font-weight:600;font-size:1.12rem}
   .card h3 a{color:var(--blue);text-decoration:none}
   .card h3 a:hover,.card h3 a:focus-visible{text-decoration:underline}
@@ -49,12 +71,12 @@
   .card p{margin:0 0 10px;color:var(--ink);font-size:.95rem}
   .card ul{margin:0 0 10px;padding-left:18px;font-size:.88rem;color:var(--muted)}
   .card .tag{margin-top:auto;font-size:.78rem;color:var(--muted)}
-  .card:hover{border-color:var(--blue-2);box-shadow:0 2px 10px rgba(31,43,61,.08)}
+  .card:hover{border-color:var(--blue-2);box-shadow:none}
   .card:focus-within{outline:3px solid var(--blue-2);outline-offset:2px}
   .note{background:var(--tint);border-left:4px solid var(--blue);padding:10px 14px;border-radius:0 6px 6px 0;font-size:.92rem;margin:18px 0}
   ul.principles{columns:2;padding-left:18px} @media (max-width:640px){ul.principles{columns:1}}
   table{width:100%;border-collapse:collapse;font-size:.92rem;background:#fff;border:1px solid var(--line)}
-  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #ece6da;vertical-align:top}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
   thead th{background:var(--tint);color:var(--blue);font-size:.8rem;text-transform:uppercase;letter-spacing:.3px}
   :focus-visible{outline:3px solid var(--blue-2);outline-offset:2px}
 
@@ -62,7 +84,7 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
-<nav class="sitebar" aria-label="DidaWorks"><a class="brand" href="/">DidaWorks</a><span class="sep" aria-hidden="true">/</span><a href="/teaching-tools/">Teaching tools</a><span class="tools"><a href="/licenses/">Licenses</a><a href="https://github.com/DidaWorks">GitHub</a></span></nav>
+<nav class="sitebar" aria-label="DidaWorks"><a class="brand" href="/"><img src="/assets/brand/dw_owl_small_bark.svg" alt="" width="28" height="28">DidaWorks</a><span class="tools"><a href="/teaching-tools/">Tools</a><a href="https://bluebrazelton-dotcom.github.io/DidaRec/">DidaRec</a><a href="/commons/">Commons</a><a href="/licenses/" aria-current="page">Licenses</a></span></nav>
 <header><div class="in">
   <div class="proto">Licenses</div>
   <h1>Licenses and attributions</h1>
@@ -97,6 +119,6 @@
 </ul>
 
 </main>
-<footer class="sitefoot"><p><strong>DidaWorks</strong>: free and open-source tools designed around real teaching workflows. Code: <a href="/licenses/#mit">MIT License</a>, except where a page says otherwise. <a href="/licenses/">Licenses and attributions</a> · <a href="https://github.com/DidaWorks/didaworks.github.io">Source on GitHub</a></p></footer>
+<footer class="sitefoot"><div class="in"><span class="brand">DidaWorks</span><span>Free and open source: <a href="/licenses/#mit">MIT License</a>, except where a page says otherwise.</span><a href="/licenses/">Licenses and attributions</a><a href="/commons/">DidaCommons</a><a href="https://github.com/DidaWorks/didaworks.github.io">Source on GitHub</a><span class="credit">Made by Blue Brazelton</span></div></footer>
 </body>
 </html>

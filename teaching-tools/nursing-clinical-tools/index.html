@@ -5,16 +5,19 @@
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nursing Clinical Teaching Tools · DidaWorks</title>
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/brand/dw_favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
 <style>
-  :root{--blue:#003466;--blue-2:#0b4a85;--tint:#e8eef6;--gold:#FFD200;--ink:#1b1f24;--muted:#525a66;--line:#d5dbe3;--bg:#f6f8fb;--ok:#1d6b3a;--warn:#8a5a00;--bad:#a3271f}
+  :root{--blue:#003466;--blue-2:#0b4a85;--tint:#E3EADF;--gold:#FFD200;--ink:#1b1f24;--muted:#525a66;--line:#C9C5BA;--bg:#F5F3EC;--ok:#1d6b3a;--warn:#8a5a00;--bad:#a3271f}
   *{box-sizing:border-box}
   body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.45}
   header{background:var(--blue);color:#fff;padding:22px 24px 0;border-bottom:5px solid var(--gold)}
   header h1{margin:0 0 4px;font-size:1.55rem}
-  header p{margin:0 0 14px;color:#dfe8f3;max-width:75ch}
+  header p{margin:0 0 14px;color:var(--meadow);max-width:75ch}
   .proto{display:inline-block;background:var(--gold);color:var(--blue);font-weight:700;font-size:.75rem;padding:2px 8px;border-radius:3px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
   nav[role=tablist]{display:flex;gap:4px;flex-wrap:wrap}
-  nav button{background:transparent;color:#dfe8f3;border:0;border-radius:6px 6px 0 0;padding:10px 16px;font-weight:700;font-size:.92rem;cursor:pointer}
+  nav button{background:transparent;color:var(--meadow);border:0;border-radius:6px 6px 0 0;padding:10px 16px;font-weight:700;font-size:.92rem;cursor:pointer}
   nav button[aria-selected=true]{background:var(--bg);color:var(--blue)}
   main{max-width:1150px;margin:22px auto;padding:0 18px}
   section.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin-bottom:16px}
@@ -24,7 +27,7 @@
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px 16px}
   label{display:block;font-size:.88rem;font-weight:600;margin-bottom:4px}
   .chk label{display:flex;gap:8px;align-items:center;font-weight:500}
-  input[type=number],input[type=text],input[type=date],textarea,select{width:100%;padding:8px 9px;border:1px solid #9aa6b5;border-radius:5px;font:inherit;font-size:.93rem;background:#fff;color:var(--ink)}
+  input[type=number],input[type=text],input[type=date],textarea,select{width:100%;padding:8px 9px;border:1px solid #857F75;border-radius:5px;font:inherit;font-size:.93rem;background:#fff;color:var(--ink)}
   textarea{min-height:90px}
   input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible{outline:3px solid var(--blue-2);outline-offset:2px}
   button.btn{background:var(--blue);color:#fff;border:0;border-radius:5px;padding:9px 14px;font-weight:700;font-size:.9rem;cursor:pointer}
@@ -33,7 +36,7 @@
   .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
   .msg{font-size:.88rem;color:var(--ok)}
   table{width:100%;border-collapse:collapse;font-size:.88rem}
-  th,td{padding:6px 8px;border-bottom:1px solid #e6eaef;text-align:left;vertical-align:top}
+  th,td{padding:6px 8px;border-bottom:1px solid #E3EADF;text-align:left;vertical-align:top}
   thead th{background:var(--tint);color:var(--blue);font-size:.76rem;text-transform:uppercase;letter-spacing:.3px}
   td.num,th.num{text-align:right}
   .tablewrap{overflow:auto;border:1px solid var(--line);border-radius:6px}
@@ -51,7 +54,7 @@
   .site{display:inline-block;padding:2px 8px;border-radius:4px;font-weight:600;font-size:.85rem}
   .bank{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   @media (max-width:800px){.bank{grid-template-columns:1fr}}
-  .phr{display:block;width:100%;text-align:left;background:#fbfcfe;border:1px solid var(--line);border-radius:5px;padding:8px 10px;margin-bottom:6px;font:inherit;font-size:.9rem;cursor:pointer;color:var(--ink)}
+  .phr{display:block;width:100%;text-align:left;background:#FFFFFF;border:1px solid var(--line);border-radius:5px;padding:8px 10px;margin-bottom:6px;font:inherit;font-size:.9rem;cursor:pointer;color:var(--ink)}
   .phr:hover{border-color:var(--blue);background:var(--tint)}
   .lvl{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
   .lvl button{background:#fff;color:var(--blue);border:1px solid var(--blue);border-radius:16px;padding:4px 12px;font-size:.85rem;cursor:pointer}
@@ -59,34 +62,53 @@
   footer{max-width:1150px;margin:0 auto 30px;padding:0 18px;font-size:.8rem;color:var(--muted)}
   [hidden]{display:none!important}
   @media print{header nav,.row,.no-print{display:none!important}}
-  /* ---- DidaWorks site layer (shared) ---- */
+  /* ---- DidaWorks site layer (shared) ----
+     Brand: Brand Standards/didaworks_brand_standards.md (Flagstaff palette). Old variable
+     names kept for the tools: --blue = Ponderosa, --blue-2 = Peaks blue, --tint = Meadow,
+     --gold = Aspen gold, --ink = Dark sky, --muted = Basalt, --line = Limestone, --bg = Aspen bark. */
   @font-face{font-family:"Roboto";src:url("/assets/fonts/Roboto-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
   @font-face{font-family:"Roboto";src:url("/assets/fonts/Roboto-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
   @font-face{font-family:"Roboto Slab";src:url("/assets/fonts/RobotoSlab-SemiBold.ttf") format("truetype");font-weight:600;font-display:swap}
-  :root{--blue:#1F2B3D;--blue-2:#3A6EA5;--tint:#E9F1F8;--gold:#E0997A;--ink:#22272E;--muted:#585D66;--line:#DED6C7;--bg:#FAF6EE;
-        --c1:#1F2B3D;--c2:#3A6EA5;--c3:#9CCDEE;--c4:#E0997A;--c5:#6F84A3;--c6:#2D8A7A;--c7:#A8553A}
-  body{font-family:"Roboto",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
-  header h1,h2{font-family:"Roboto Slab","Roboto",Georgia,serif;font-weight:600}
-  .skip{position:absolute;left:-9999px;top:0;background:#fff;color:#1F2B3D;padding:8px 12px;z-index:10;font-weight:700}
+  :root{--blue:#234A3A;--blue-2:#3D6A8A;--tint:#E3EADF;--gold:#F2CF6B;--ink:#1B2230;--muted:#4F4C47;--line:#C9C5BA;--bg:#F5F3EC;
+        --ponderosa:#234A3A;--aspen-gold:#F2CF6B;--aspen-bark:#F5F3EC;--meadow:#E3EADF;--peaks:#3D6A8A;--cinder:#9A4A2C;--basalt:#4F4C47;--limestone:#C9C5BA;--dark-sky:#1B2230;
+        --c1:#234A3A;--c2:#F2CF6B;--c3:#3D6A8A;--c4:#C9C5BA;--c5:#9A4A2C;--c6:#E3EADF;--c7:#4F4C47}
+  body{font-family:"Roboto",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+  header h1,h2,h3{font-family:"Roboto Slab","Roboto",Georgia,serif;font-weight:600}
+  a{color:var(--peaks)}
+  .skip{position:absolute;left:-9999px;top:0;background:#fff;color:var(--ponderosa);padding:8px 12px;z-index:10;font-weight:700}
   .skip:focus{left:8px;top:8px}
-  .sitebar{background:#16202E;color:#EFE6D3;display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:8px 24px;font-size:.88rem}
-  .sitebar a{color:#EFE6D3;text-decoration:none}
-  .sitebar a:hover,.sitebar a:focus-visible{text-decoration:underline}
-  .sitebar .brand{font-family:"Roboto Slab","Roboto",serif;font-weight:600;color:#E0997A;font-size:1rem}
-  .sitebar .sep{color:#6F84A3}
-  .sitebar .tools{display:flex;flex-wrap:wrap;gap:4px 14px;margin-left:auto}
-  .sitebar .tools a[aria-current=page]{color:#9CCDEE;font-weight:700;text-decoration:underline;text-underline-offset:3px}
-  .sitebar a:focus-visible{outline:2px solid #9CCDEE;outline-offset:2px}
-  .proto{background:var(--gold)!important;color:#1F2B3D!important}
-  header{border-bottom-color:var(--gold)!important}
-  .sitefoot{max-width:1180px;margin:0 auto 32px;padding:14px 18px 0;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted)}
-  .sitefoot a{color:#2F5D8A}
+  .sitebar{background:var(--ponderosa);color:var(--aspen-bark);display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;padding:10px 24px;font-size:.9rem;border-bottom:1px solid rgba(245,243,236,.18)}
+  .sitebar a{color:var(--aspen-bark);text-decoration:none}
+  .sitebar a:hover,.sitebar a:focus-visible{text-decoration:underline;text-underline-offset:3px}
+  .sitebar .brand{font-family:"Roboto Slab","Roboto",serif;font-weight:600;color:var(--aspen-bark);font-size:1.1rem}
+  .sitebar .brand{display:inline-flex;align-items:center;gap:8px}
+  .sitebar .brand img{height:28px;width:28px}
+  .sitebar .sep{color:var(--limestone)}
+  .sitebar .tools{display:flex;flex-wrap:wrap;gap:4px 16px;margin-left:auto}
+  .sitebar a[aria-current=page]{color:var(--aspen-gold);font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+  .sitebar a:focus-visible{outline:2px solid var(--aspen-gold);outline-offset:2px}
+  header{border-bottom:3px solid var(--gold)!important}
+  header p{color:var(--meadow)!important}
+  .proto{background:var(--gold)!important;color:var(--ponderosa)!important;border-radius:999px!important;padding:3px 10px!important}
+  section.card,.card{border-radius:14px}
+  button,.btn,button.btn,button.secondary,button.btn.secondary,button.mini{border-radius:999px}
+  .lvl button{border-radius:999px}
+  nav button{border-radius:8px 8px 0 0}
+  nav button{color:var(--meadow)}
+  :focus-visible{outline-color:var(--peaks)}
+  .sitefoot{max-width:none!important;margin:40px 0 0!important;padding:16px 24px!important;background:var(--basalt);color:var(--aspen-bark)!important;border-top:0!important;font-size:.85rem}
+  .sitefoot .in{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px}
+  .sitefoot .brand{font-family:"Roboto Slab","Roboto",serif;font-weight:600;font-size:1rem}
+  .sitefoot a{color:var(--aspen-gold);text-decoration:underline;text-underline-offset:3px}
+  .sitefoot a:focus-visible{outline:2px solid var(--aspen-gold);outline-offset:2px}
+  .sitefoot .credit{margin-left:auto}
+  .sw{box-shadow:inset 0 0 0 1px rgba(27,34,48,.35)}
 
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
-<nav class="sitebar" aria-label="DidaWorks"><a class="brand" href="/">DidaWorks</a><span class="sep" aria-hidden="true">/</span><a href="/teaching-tools/">Teaching tools</a><span class="tools"><a href="/teaching-tools/workload-estimator/">Workload estimator</a><a href="/teaching-tools/date-shifter/">Date shifter</a><a href="/teaching-tools/nursing-exam-tools/">Nursing exam tools</a><a href="/teaching-tools/nursing-clinical-tools/" aria-current="page">Nursing clinical tools</a></span></nav>
+<nav class="sitebar" aria-label="DidaWorks"><a class="brand" href="/"><img src="/assets/brand/dw_owl_small_bark.svg" alt="" width="28" height="28">DidaWorks</a><span class="sep" aria-hidden="true">/</span><a href="/teaching-tools/">Teaching tools</a><span class="tools"><a href="/teaching-tools/workload-estimator/">Workload estimator</a><a href="/teaching-tools/date-shifter/">Date shifter</a><a href="/teaching-tools/nursing-exam-tools/">Nursing exam tools</a><a href="/teaching-tools/nursing-clinical-tools/" aria-current="page">Nursing clinical tools</a></span></nav>
 <header>
   <div class="proto">Prototype · free and open source</div>
   <h1>Clinical Teaching Tools</h1>
@@ -373,7 +395,7 @@ $("hCopy").addEventListener("click", ()=>copyText(hTable("\t"), $("hMsg")));
 hRender();
 
 // =============== ROTATION ===============
-const COLORS = ["#dbe7f5","#fff1b8","#dcefe3","#f6e0d6","#e7def3","#d9eef0","#f3e3ea","#ece7d6"];
+const COLORS = ["#E3EADF","#fff1b8","#dcefe3","#f6e0d6","#e7def3","#d9eef0","#f3e3ea","#ece7d6"];
 (function(){ const d=new Date(); d.setDate(d.getDate() + ((8-d.getDay())%7||7)); $("rStart").value = d.toISOString().slice(0,10); })();
 let rGrid = null;
 function rBuild(){
@@ -483,6 +505,6 @@ fRender();
 window.__ct = {GEN, rng, hashStr};
 })();
 </script>
-<footer class="sitefoot"><p><strong>DidaWorks</strong>: free and open-source tools designed around real teaching workflows. Code: <a href="/licenses/#mit">MIT License</a>. <a href="/licenses/">Licenses and attributions</a> · <a href="https://github.com/DidaWorks/didaworks.github.io">Source on GitHub</a></p></footer>
+<footer class="sitefoot"><div class="in"><span class="brand">DidaWorks</span><span>Free and open source: <a href="/licenses/#mit">MIT License</a>, except where a page says otherwise.</span><a href="/licenses/">Licenses and attributions</a><a href="https://github.com/DidaWorks/commons/discussions">Suggest a feature in DidaCommons</a><a href="https://github.com/DidaWorks/didaworks.github.io">Source on GitHub</a><span class="credit">Made by Blue Brazelton</span></div></footer>
 </body>
 </html>
