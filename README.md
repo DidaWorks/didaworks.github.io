@@ -16,7 +16,7 @@ Public website for the DidaWorks project: free and open-source tools designed ar
 | `/licenses/` | Every license and attribution used on the site |
 | `/assets/fonts/` | Roboto (SIL OFL 1.1) and Roboto Slab (Apache 2.0), with license texts |
 
-Every tool is a single self-contained HTML page. Nothing is sent to a server: files, data, and text stay in the visitor's browser. Pages are marked `noindex` while they're prototypes.
+Every tool is a single self-contained HTML page. No tool sends anything to a server: files, data, and text stay in the visitor's browser. Page visits are counted with GoatCounter (no cookies, no personal data). Pages are marked `noindex` while they're prototypes.
 
 ## Brand
 
